@@ -15,7 +15,6 @@ import { Product } from './model/product.entity';
       password: '',
       database: 'shop',
       entities: [Product],
-      synchronize: true
     }),
     ProductosModule,
     ProveedoresModule,

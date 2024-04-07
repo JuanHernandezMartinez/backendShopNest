@@ -16,13 +16,15 @@ export class ProductosController {
   constructor(private productService: ProductosService) {}
 
   @Get()
-  public getProducts() {
-    this.productService.getProducts();
+  public getProducts(): Promise<Product[]> {
+    return this.productService.getProducts();
   }
 
   @Post()
-  public createProduct(@Body() dataProduct: Product): void {
+  public createProduct(@Body() dataProduct: Product=null): string {
+    console.log(dataProduct)
     this.productService.createProduct(dataProduct);
+    return 'Creado';
   }
 
   @Put()
