@@ -1,11 +1,15 @@
-import { Provider } from "@nestjs/common";
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-
-export class Product{
-    id:number
-    name:string
-    description:string
-    price:number
-    barCode:string
-    provider:Provider
+@Entity('Products')
+export class Product {
+  @PrimaryGeneratedColumn()
+  id: number;
+  @Column()
+  name: string;
+  @Column()
+  description: string;
+  @Column()
+  price: number;
+  @Column()
+  barCode: string;
 }
